@@ -10,5 +10,6 @@ internal class Program
         var input = File.ReadLines(inputFile);
         var reports = new InputParser(input).Parse();
         Console.WriteLine(reports.Count(report => report.IsSafe()));
+        Console.WriteLine(reports.Count(report => report.IsSafeWithDampener()));
     }
 }
