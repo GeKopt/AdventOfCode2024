@@ -5,12 +5,14 @@ namespace Day3
     public class InputParser
     {
         private IEnumerable<string> _input;
+        private bool _isEnabled = true;
+
         public InputParser(IEnumerable<string> input)
         {
             _input = input;
         }
 
-        public IEnumerable<long> Parse()
+        public IEnumerable<long> Parse(bool useEnabledState)
         {
             foreach(var line in _input)
             {
@@ -18,6 +20,7 @@ namespace Day3
                 int nextMulIndex;
                 while ((nextMulIndex = line.IndexOf("mul(", startIndex)) != -1)
                 {
+                    _isEnabled = GetIsEnabled(line, startIndex, nextMulIndex);
                     nextMulIndex += 4;
                     var separatorIndex = line.IndexOf(',', nextMulIndex);
                     var endParenthesisIndex = line.IndexOf(')', separatorIndex);
@@ -35,9 +38,36 @@ namespace Day3
                         continue;
                     }
                     startIndex = nextMulIndex;
-                    yield return source * target;
+                    if (useEnabledState && _isEnabled || !useEnabledState)
+                    {
+                        yield return source * target;
+                    }
                 }
             }            
+        }
+
+        private bool GetIsEnabled(string line, int startIndex, int nextMulIndex)
+        {
+            var doIndex = line.IndexOf("do()", startIndex);
+            var dontIndex = line.IndexOf("don't()", startIndex);
+            if (doIndex != -1 && doIndex < GetLowest(nextMulIndex, dontIndex))
+            {
+                return true;
+            }
+            else if (dontIndex != -1 && dontIndex < GetLowest(nextMulIndex, doIndex))
+            {
+                return false;
+            }
+            return _isEnabled;
+        }
+
+        private int GetLowest(int nextMulIndex, int index)
+        {
+            if(index == -1)
+            {
+                return nextMulIndex;
+            }
+            return Math.Min(index, nextMulIndex);
         }
     }
 }
