@@ -9,8 +9,11 @@ internal class Program
         string inputFile = "input.txt";
         var input = File.ReadLines(inputFile);
         var grid = new WordGrid(input.ToList());
-        var finder = new ChristmasFinder(grid);
-        Console.WriteLine(finder.FindOccurances());
+        var christmasFinder = new ChristmasFinder(grid);
+        Console.WriteLine(christmasFinder.FindOccurances());
+
+        var masFinder = new MasFinder(grid);
+        Console.WriteLine(masFinder.FindOccurances());
 
     }
 }
