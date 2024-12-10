@@ -59,7 +59,6 @@ namespace Day6
         public bool HasLoop()
         {
             var route = new List<Point>();
-            _guard.Turn();
             while (true)
             {
                 var nextPosition = _guard.GetNextPosition();
@@ -76,7 +75,6 @@ namespace Day6
                 _guard.Move();
                 route.Add(_guard.CurrentPosition);
                 _map.Positions[_guard.CurrentPosition.X, _guard.CurrentPosition.Y] = 'X';
-
                 if (IsLooping(route, _guard.CurrentPosition, _guard.GetNextPosition()))
                 {
                     Console.WriteLine(_map.ToString());

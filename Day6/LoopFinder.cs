@@ -42,7 +42,6 @@ namespace Day6
             var setBlocks = new HashSet<Point>();
             var map = _startingMap.Clone();
             var guard = _initialGuard.Clone();
-            bool turned = false;
             while (true)
             {
                 var nextPosition = guard.GetNextPosition();
@@ -53,14 +52,13 @@ namespace Day6
                 if (map.IsBlocked(nextPosition))
                 {
                     guard.Turn();
-                    turned = true;
                 }
 
                 guard.Move();
                 map.AddVisited(guard.CurrentPosition);
                 nextPosition = guard.GetNextPosition();
 
-                if (!turned || nextPosition == guard.StartingPosition || map.IsOutOfBounds(nextPosition) || setBlocks.Contains(nextPosition))
+                if (nextPosition == guard.StartingPosition || map.IsOutOfBounds(nextPosition) || setBlocks.Contains(nextPosition))
                 {
                     continue;
                 }
