@@ -65,9 +65,9 @@ namespace Day6
                     continue;
                 }
 
-                var testmap = map.Clone();
+                var testmap = _startingMap.Clone();
                 testmap.AddBlock(nextPosition);
-                var navigator = new GuardNavigator(testmap, guard.Clone());
+                var navigator = new GuardNavigator(testmap, _initialGuard.Clone());
                 if (navigator.HasLoop())
                 {
                     setBlocks.Add(nextPosition);
