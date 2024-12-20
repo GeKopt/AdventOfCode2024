@@ -11,7 +11,7 @@ namespace AdventOfCode.Tests.Day9
     public class ChecksumCalculatorTests
     {
         [Test]
-        public void Calculate_ShouldCalculateCorrectChecksum_WhenCalled()
+        public void Calculate_ShouldCalculateCorrectChecksum_WhenCalledWithOrderByFragmentation()
         {
             var files = new List<FileBlock>()
             {
@@ -46,6 +46,88 @@ namespace AdventOfCode.Tests.Day9
             };
             var sut = new ChecksumCalculator(files);
             sut.Calculate().Should().Be(1928);
+        }
+
+        [Test]
+        public void Calculate_ShouldCalculateCorrectChecksum_WhenCalledWithOrderByBlock()
+        {
+            var files = new List<FileBlock>()
+            {
+                new FileBlock(0),
+                new FileBlock(0),
+                new FileBlock(9),
+                new FileBlock(9),
+                new FileBlock(2),
+                new FileBlock(1),
+                new FileBlock(1),
+                new FileBlock(1),
+                new FileBlock(7),
+                new FileBlock(7),
+                new FileBlock(7),
+                new FileBlock(-1),
+                new FileBlock(4),
+                new FileBlock(4),
+                new FileBlock(-1),
+                new FileBlock(3),
+                new FileBlock(3),
+                new FileBlock(3),
+                new FileBlock(-1),
+                new FileBlock(-1),
+                new FileBlock(-1),
+                new FileBlock(-1),
+                new FileBlock(5),
+                new FileBlock(5),
+                new FileBlock(5),
+                new FileBlock(5),
+                new FileBlock(-1),
+                new FileBlock(6),
+                new FileBlock(6),
+                new FileBlock(6),
+                new FileBlock(6),
+                new FileBlock(-1),
+                new FileBlock(-1),
+                new FileBlock(-1),
+                new FileBlock(-1),
+                new FileBlock(-1),
+                new FileBlock(8),
+                new FileBlock(8),
+                new FileBlock(8),
+                new FileBlock(8),
+                new FileBlock(-1),
+                new FileBlock(-1)
+            };
+            var sut = new ChecksumCalculator(files);
+            sut.Calculate().Should().Be(2858);
+        }
+
+        [Test]
+        public void Calculate_ShouldCalculateCorrectChecksum_WhenCalledWithOrderByBlock2()
+        {
+            var files = new List<FileBlock>()
+            {
+                new FileBlock(0),
+                new FileBlock(2),
+                new FileBlock(1),
+                new FileBlock(-1),
+                new FileBlock(-1),
+                new FileBlock(-1),
+                new FileBlock(-1),
+                new FileBlock(-1),
+                new FileBlock(-1),
+                new FileBlock(3),
+                new FileBlock(3),
+                new FileBlock(3),
+                new FileBlock(3),
+                new FileBlock(3),
+                new FileBlock(-1),
+                new FileBlock(-1),
+                new FileBlock(-1),
+                new FileBlock(-1),
+                new FileBlock(-1),
+                new FileBlock(-1)
+            };
+            var sut = new ChecksumCalculator(files);
+            sut.Calculate().Should().Be(169);
         }
     }
 }

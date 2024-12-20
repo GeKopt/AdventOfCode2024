@@ -17,7 +17,7 @@
                 var currentFile = _files[index];
                 if (currentFile.IsEmpty)
                 {
-                    break;
+                    continue;
                 }
                 checksum += index * currentFile.Id;
             }
@@ -25,3 +25,5 @@
         }
     }
 }
+
+

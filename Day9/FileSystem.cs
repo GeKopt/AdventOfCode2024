@@ -29,9 +29,12 @@
 
                 for (int current = 0; current < size; current++)
                 {
+                    file.AddBlock();
                     Files.Add(file);
                 }
             }
+
+            FilePresenter.Print(Files);
         }
     }
 }
