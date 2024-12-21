@@ -11,6 +11,7 @@ internal class Program
 
         var map = new Map(input);
         var hikes = new Hikes(map);
-        Console.WriteLine(hikes.GetTotalHikes());
+        Console.WriteLine("HIKES " + hikes.GetTotalHikes());
+        Console.WriteLine("RATING " + hikes.GetTotalRating());
     }
 }

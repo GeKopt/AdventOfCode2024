@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -8,40 +7,37 @@ using System.Threading.Tasks;
 
 namespace Day10
 {
-    public class HikePathFinder
+    public class HikeRatingFinder
     {
         private Map _map;
         private const int END = 9;
         private List<Point> endPointsReached = new List<Point>();
 
-        public HikePathFinder(Map map)
+        public HikeRatingFinder(Map map)
         {
             _map = map;
         }
 
-        public int GetPossibleHikePaths(Point start)
+        public int GetRating(Point start)
         {
-            GetValidPaths(start);
+            GetValidRatingPaths(start);
             return endPointsReached.Count;
         }
 
-        private void GetValidPaths(Point start) 
+        private void GetValidRatingPaths(Point start)
         {
             var possibleNextPaths = _map.GetNextPositions(start);
             if (_map.GetValue(start) + 1 == END)
             {
-                foreach(var path in possibleNextPaths)
+                foreach (var path in possibleNextPaths)
                 {
-                    if (!endPointsReached.Contains(path))
-                    {
-                        endPointsReached.Add(path);
-                    }
+                    endPointsReached.Add(path);
                 }
                 return;
             }
-            foreach(var position in possibleNextPaths)
+            foreach (var position in possibleNextPaths)
             {
-                GetValidPaths(position);
+                GetValidRatingPaths(position);
             }
         }
     }

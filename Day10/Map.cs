@@ -75,17 +75,36 @@ namespace Day10
             return OUTOFBOUNDS;
         }
 
-        public Map Clone()
+        public IEnumerable<Point> GetNextPositions(Point start)
         {
-            var clonedPositions = new int[Positions.GetLength(0), Positions.GetLength(1)];
-            for (int x = 0; x < Positions.GetLength(0); x++)
+            var currentValue = GetValue(start);
+
+            var possiblePositions = new List<Point>()
             {
-                for (int y = 0; y < Positions.GetLength(1); y++)
+                GetNextPoint(Direction.NORTH, start),
+                GetNextPoint(Direction.EAST, start),
+                GetNextPoint(Direction.SOUTH, start),
+                GetNextPoint(Direction.WEST, start),
+            };
+            foreach (var position in possiblePositions)
+            {
+                if (GetValue(position) == currentValue + 1)
                 {
-                    clonedPositions[x, y] = Positions[x, y];
+                    yield return position;
                 }
             }
-            return new Map(clonedPositions);
+        }
+
+        private Point GetNextPoint(Direction direction, Point current)
+        {
+            return direction switch
+            {
+                Direction.NORTH => new Point(current.X, current.Y - 1),
+                Direction.EAST => new Point(current.X + 1, current.Y),
+                Direction.SOUTH => new Point(current.X, current.Y + 1),
+                Direction.WEST => new Point(current.X - 1, current.Y),
+                _ => throw new InvalidOperationException("Direction not supported")
+            };
         }
     }
 }
