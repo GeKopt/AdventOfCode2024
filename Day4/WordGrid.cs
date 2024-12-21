@@ -12,12 +12,12 @@
 
         private void FillGrid(List<string> rows)
         {
-            for(int rowIndex = 0; rowIndex < rows.Count(); rowIndex++) 
+            for (int rowIndex = 0; rowIndex < rows.Count(); rowIndex++)
             {
                 var row = rows[rowIndex];
                 for (int columnIndex = 0; columnIndex < row.Length; columnIndex++)
                 {
-                    Letters[rowIndex, columnIndex] = row[columnIndex]; 
+                    Letters[rowIndex, columnIndex] = row[columnIndex];
                 }
             }
         }

@@ -6,13 +6,13 @@
 
         public InputParser(List<string> lines)
         {
-            _lines = lines;    
+            _lines = lines;
         }
 
         public List<Calibration> Parse()
         {
             var calibrations = new List<Calibration>();
-            foreach(var line in _lines) 
+            foreach (var line in _lines)
             {
                 var splitColon = line.Split(": ");
                 var total = long.Parse(splitColon[0]);

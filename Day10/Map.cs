@@ -69,7 +69,7 @@ namespace Day10
         public int GetValue(Point position)
         {
             if (!IsOutOfBounds(position))
-            { 
+            {
                 return Positions[position.X, position.Y];
             }
             return OUTOFBOUNDS;

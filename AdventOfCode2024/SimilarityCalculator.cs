@@ -1,24 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-
-namespace Day1
+﻿namespace Day1
 {
     public class SimilarityCalculator
     {
         private Locations _locations;
         private List<int> _toMatch = new List<int>();
-        private Dictionary<int,int> _grouped = new Dictionary<int,int>();
+        private Dictionary<int, int> _grouped = new Dictionary<int, int>();
 
         public SimilarityCalculator(Locations locations)
         {
             _locations = locations;
             _toMatch = _locations.Right;
             var grouped = _toMatch.GroupBy(current => current, (key, items) => new { Key = key, Count = items.Count() });
-            foreach(var group in grouped)
+            foreach (var group in grouped)
             {
                 _grouped.Add(group.Key, group.Count);
             }
@@ -37,7 +30,7 @@ namespace Day1
         public int CalculateTotalSimilarityScore()
         {
             int total = 0;
-            foreach(var current in _locations.Left)
+            foreach (var current in _locations.Left)
             {
                 total += CalculateSimilatiryScore(current);
             }

@@ -61,13 +61,13 @@
                 }
 
                 var foundFile = copiedFiles[filledSpotToFill];
-                for(int current = index; current < (index + foundFile.Size); current++)
+                for (int current = index; current < (index + foundFile.Size); current++)
                 {
                     copiedFiles[current] = foundFile;
                 }
                 for (int current = filledSpotToFill; current > (filledSpotToFill - foundFile.Size); current--)
                 {
-                    copiedFiles[current] = new FileBlock(-1,currentFile.Size);
+                    copiedFiles[current] = new FileBlock(-1, currentFile.Size);
                 }
                 currentFile.RemoveBlocks(foundFile.Size);
                 idsDone.Add(foundFile.Id);

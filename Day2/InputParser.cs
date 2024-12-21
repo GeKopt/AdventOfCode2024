@@ -1,6 +1,4 @@
-﻿using Day2;
-
-namespace Day2
+﻿namespace Day2
 {
     public class InputParser
     {
@@ -13,7 +11,7 @@ namespace Day2
         public List<Report> Parse()
         {
             var reports = new List<Report>();
-            foreach(var line in _input)
+            foreach (var line in _input)
             {
                 reports.Add(new Report(line));
             }

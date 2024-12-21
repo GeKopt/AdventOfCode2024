@@ -1,11 +1,6 @@
 ﻿using Day7;
 using FluentAssertions;
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdventOfCode.Tests.Day7
 {
@@ -38,7 +33,7 @@ namespace AdventOfCode.Tests.Day7
         {
             get
             {
-                yield return new TestCaseData(new Calibration(156, new List<long> { 15, 6 })) {TestName = "1" } ;
+                yield return new TestCaseData(new Calibration(156, new List<long> { 15, 6 })) { TestName = "1" };
                 yield return new TestCaseData(new Calibration(7290, new List<long> { 6, 8, 6, 15 })) { TestName = "2" };
                 yield return new TestCaseData(new Calibration(192, new List<long> { 17, 8, 14 })) { TestName = "3" };
             }

@@ -10,7 +10,7 @@ namespace AdventOfCode.Tests.Day9
             get
             {
                 yield return new TestCaseData(new List<FileBlock>()
-                { 
+                {
                     new FileBlock(0),
                     new FileBlock(0),
                     new FileBlock(),
@@ -55,7 +55,7 @@ namespace AdventOfCode.Tests.Day9
                     new FileBlock(9)
                 },
                 new List<FileBlock>()
-                { 
+                {
                     new FileBlock(0),
                     new FileBlock(0),
                     new FileBlock(9),
@@ -103,7 +103,7 @@ namespace AdventOfCode.Tests.Day9
                     new FileBlock(2),
                     new FileBlock(2),
                     new FileBlock(2)
-                }, 
+                },
                 new List<FileBlock>()
                 {
                     new FileBlock(0),
@@ -225,7 +225,7 @@ namespace AdventOfCode.Tests.Day9
         [Test]
         public void OrderByBlock_ShouldOrderFilesCorrectly_WhenFilesContainEmptySpaces()
         {
-            var firstFile = new FileBlock(0,2);
+            var firstFile = new FileBlock(0, 2);
             var firstEmpty = new FileBlock(-1, 3);
             var secondFile = new FileBlock(1, 3);
             var secondEmpty = new FileBlock(-1, 3);
@@ -290,7 +290,7 @@ namespace AdventOfCode.Tests.Day9
                     tenthFile
                 };
 
-            var expected = new List<int>() { 0,0,9,9,2,1,1,1,7,7,7,-1,4,4,-1,3,3,3,-1,-1,-1,-1,5,5,5,5,-1,6,6,6,6,-1,-1,-1,-1,-1,8,8,8,8,-1,-1 };
+            var expected = new List<int>() { 0, 0, 9, 9, 2, 1, 1, 1, 7, 7, 7, -1, 4, 4, -1, 3, 3, 3, -1, -1, -1, -1, 5, 5, 5, 5, -1, 6, 6, 6, 6, -1, -1, -1, -1, -1, 8, 8, 8, 8, -1, -1 };
             var sut = new FileOrderer(files);
             var ordered = sut.OrderByBlock();
             ordered.Select(file => file.Id).Should().BeEquivalentTo(expected);
@@ -332,7 +332,7 @@ namespace AdventOfCode.Tests.Day9
                     fourthFile
                 };
 
-            var expected = new List<int>() { 0, 2, 1, -1, -1, -1, -1, -1, -1, 3, 3, 3, 3, 3, -1, -1, -1,  -1, -1, -1 };
+            var expected = new List<int>() { 0, 2, 1, -1, -1, -1, -1, -1, -1, 3, 3, 3, 3, 3, -1, -1, -1, -1, -1, -1 };
             var sut = new FileOrderer(files);
             var ordered = sut.OrderByBlock().Select(file => file.Id);
             ordered.Should().BeEquivalentTo(expected);

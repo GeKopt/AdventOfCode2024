@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Day9
+﻿namespace Day9
 {
     public static class FilePresenter
     {
         public static void Print(List<FileBlock> files)
         {
-            foreach (var file in files) 
+            foreach (var file in files)
             {
                 var toPrint = file.IsEmpty ? "." : file.Id.ToString();
                 Console.Write(toPrint);

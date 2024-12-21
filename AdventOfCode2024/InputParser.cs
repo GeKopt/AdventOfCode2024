@@ -11,7 +11,7 @@
         public Locations Parse()
         {
             var locations = new Locations();
-            foreach(var line in _input)
+            foreach (var line in _input)
             {
                 var split = line.Split(' ').Where(split => !string.IsNullOrEmpty(split)).ToArray();
                 var left = int.Parse(split[0]);

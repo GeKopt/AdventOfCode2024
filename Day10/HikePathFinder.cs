@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 
 namespace Day10
 {
@@ -25,12 +19,12 @@ namespace Day10
             return endPointsReached.Count;
         }
 
-        private void GetValidPaths(Point start) 
+        private void GetValidPaths(Point start)
         {
             var possibleNextPaths = _map.GetNextPositions(start);
             if (_map.GetValue(start) + 1 == END)
             {
-                foreach(var path in possibleNextPaths)
+                foreach (var path in possibleNextPaths)
                 {
                     if (!endPointsReached.Contains(path))
                     {
@@ -39,7 +33,7 @@ namespace Day10
                 }
                 return;
             }
-            foreach(var position in possibleNextPaths)
+            foreach (var position in possibleNextPaths)
             {
                 GetValidPaths(position);
             }

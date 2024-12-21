@@ -20,10 +20,10 @@ namespace AdventOfCode.Tests.Day2
 
             var expected = new List<Report>()
             {
-                new Report("7 6 4 2 1"), 
-                new Report("1 2 7 8 9"), 
-                new Report("9 7 6 2 1"), 
-                new Report("1 3 2 4 5"), 
+                new Report("7 6 4 2 1"),
+                new Report("1 2 7 8 9"),
+                new Report("9 7 6 2 1"),
+                new Report("1 3 2 4 5"),
                 new Report("8 6 4 4 1"),
                 new Report("1 3 6 7 9")
         };

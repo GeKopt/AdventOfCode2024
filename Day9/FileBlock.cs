@@ -11,7 +11,7 @@
 
         public FileBlock(int id)
         {
-            Id = id;    
+            Id = id;
         }
 
         public FileBlock(int id, int size)

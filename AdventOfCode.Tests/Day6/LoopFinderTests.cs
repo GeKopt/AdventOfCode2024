@@ -44,7 +44,7 @@ namespace AdventOfCode.Tests.Day_6
                 ".#.",
             });
             var sut = new LoopFinder(map);
-            
+
 
         }
     }

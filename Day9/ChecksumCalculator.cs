@@ -12,7 +12,7 @@
         public long Calculate()
         {
             var checksum = 0L;
-            for(int index = 0; index < _files.Count; index++)
+            for (int index = 0; index < _files.Count; index++)
             {
                 var currentFile = _files[index];
                 if (currentFile.IsEmpty)

@@ -46,7 +46,7 @@
             {
                 var calculated = 0L;
                 var copiedOption = currentOption;
-                var copiedCalibration = new Calibration(calibration.Total,new List<long>(calibration.Values));
+                var copiedCalibration = new Calibration(calibration.Total, new List<long>(calibration.Values));
                 for (int currentValue = 0; currentValue < copiedCalibration.Values.Count; currentValue++)
                 {
                     var operatorToUse = copiedOption % 3;

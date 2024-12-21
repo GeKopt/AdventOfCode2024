@@ -1,13 +1,7 @@
-﻿using Day7;
-using Day8;
+﻿using Day8;
 using FluentAssertions;
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdventOfCode.Tests.Day8
 {

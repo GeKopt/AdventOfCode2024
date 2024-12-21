@@ -71,7 +71,7 @@ namespace Day8
                 }
             }
         }
-  
+
         public override string ToString()
         {
             var rows = new List<string>();
@@ -102,7 +102,7 @@ namespace Day8
                     else
                     {
                         row += '#';
-                    }                    
+                    }
                 }
                 rows.Add(row);
             }

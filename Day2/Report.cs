@@ -1,6 +1,4 @@
-﻿using static System.Net.Mime.MediaTypeNames;
-
-namespace Day2
+﻿namespace Day2
 {
     public class Report
     {
@@ -9,7 +7,7 @@ namespace Day2
         public Report(string report)
         {
             var split = report.Split(' ');
-            foreach(var level in  split) 
+            foreach (var level in split)
             {
                 Levels.Add(int.Parse(level));
             }
@@ -29,7 +27,7 @@ namespace Day2
                 if (IsSafe(dampenedLevels))
                 {
                     return true;
-                }                
+                }
             }
             return false;
 
@@ -62,7 +60,7 @@ namespace Day2
             return true;
         }
 
-        private bool IsWithinRange(int current , int next)
+        private bool IsWithinRange(int current, int next)
         {
             return Math.Abs(current - next) > 0 && Math.Abs(current - next) < 4;
         }

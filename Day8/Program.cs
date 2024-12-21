@@ -8,7 +8,7 @@ internal class Program
         Assembly assembly = Assembly.GetExecutingAssembly();
         string inputFile = "input.txt";
         var input = File.ReadLines(inputFile).ToList();
-        
+
         PartOne(input);
         PartTwo(input);
 

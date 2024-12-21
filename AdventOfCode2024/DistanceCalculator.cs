@@ -4,7 +4,7 @@
     {
         public int CalculateDistance(int left, int right)
         {
-            return Math.Max(left,right) - Math.Min(left,right);
+            return Math.Max(left, right) - Math.Min(left, right);
         }
 
         public int CalculateTotalDistance(Locations locations)
@@ -15,7 +15,7 @@
             left.Sort();
             right.Sort();
             int total = 0;
-            for(int index = 0; index < left.Count; index++)
+            for (int index = 0; index < left.Count; index++)
             {
                 var currentLeft = left[index];
                 var currentRight = right[index];

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 
 namespace Day8
 {
@@ -37,7 +32,7 @@ namespace Day8
                                 _map.AddAntinode(current);
                                 _map.AddAntinode(antenna);
                             }
-                            foreach(var antennaNodePosition in antiNodePositions)
+                            foreach (var antennaNodePosition in antiNodePositions)
                             {
                                 _map.AddAntinode(antennaNodePosition);
                             }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Day10
+﻿namespace Day10
 {
     public class Hikes
     {
@@ -19,7 +13,7 @@ namespace Day10
         {
             var total = 0;
             var trailHeads = _map.GetTrailHeads();
-            foreach(var trail in trailHeads) 
+            foreach (var trail in trailHeads)
             {
                 var finder = new HikePathFinder(_map);
                 total += finder.GetPossibleHikePaths(trail);

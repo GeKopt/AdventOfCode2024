@@ -15,10 +15,10 @@
         {
             var orderedPages = _pages.ToList();
             var checker = new PageOrderChecker(_rules);
-            while(!checker.IsValidOrder(orderedPages))
+            while (!checker.IsValidOrder(orderedPages))
             {
                 var invalidPages = checker.GetInvalidPages(orderedPages);
-                foreach(var invalidPage in invalidPages)
+                foreach (var invalidPage in invalidPages)
                 {
                     orderedPages.Remove(invalidPage);
                     orderedPages.Insert(0, invalidPage);

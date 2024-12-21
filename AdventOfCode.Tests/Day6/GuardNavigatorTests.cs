@@ -1,6 +1,5 @@
 ﻿using Day6;
 using FluentAssertions;
-using System.Drawing;
 
 namespace AdventOfCode.Tests.Day_6
 {

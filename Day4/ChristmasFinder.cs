@@ -5,7 +5,7 @@ namespace Day4
     public class ChristmasFinder
     {
         private WordGrid _grid;
-        
+
         public ChristmasFinder(WordGrid grid)
         {
             _grid = grid;
@@ -72,7 +72,7 @@ namespace Day4
             {
                 return false;
             }
-            for(int x = 1; x < 4;x++)
+            for (int x = 1; x < 4; x++)
             {
                 currentChar = GetNextCharacter(currentChar);
                 if (_grid.Letters[currentPosition.X - x, currentPosition.Y - x] != currentChar)
@@ -101,7 +101,7 @@ namespace Day4
             return true;
         }
 
-        private bool IsNorthEast(Point currentPosition) 
+        private bool IsNorthEast(Point currentPosition)
         {
             var currentChar = 'X';
             if (currentPosition.X - 3 < 0 || currentPosition.Y + 3 >= _grid.Letters.GetLength(1))
@@ -119,7 +119,7 @@ namespace Day4
             return true;
         }
 
-        private bool IsEast(Point currentPosition) 
+        private bool IsEast(Point currentPosition)
         {
             var currentChar = 'X';
             if (currentPosition.Y + 3 >= _grid.Letters.GetLength(1))
@@ -155,7 +155,7 @@ namespace Day4
             return true;
         }
 
-        private bool IsSouth(Point currentPosition) 
+        private bool IsSouth(Point currentPosition)
         {
             var currentChar = 'X';
             if (currentPosition.X + 3 >= _grid.Letters.GetLength(1))
@@ -173,7 +173,7 @@ namespace Day4
             return true;
         }
 
-        private bool IsSouthWest(Point currentPosition) 
+        private bool IsSouthWest(Point currentPosition)
         {
             var currentChar = 'X';
             if (currentPosition.X + 3 >= _grid.Letters.GetLength(1) || currentPosition.Y - 3 < 0)
@@ -191,14 +191,14 @@ namespace Day4
             return true;
         }
 
-        private bool IsWest(Point currentPosition) 
+        private bool IsWest(Point currentPosition)
         {
             var currentChar = 'X';
             if (currentPosition.Y - 3 < 0)
             {
                 return false;
             }
-            for (int x = 1; x < 4 ; x++)
+            for (int x = 1; x < 4; x++)
             {
                 currentChar = GetNextCharacter(currentChar);
                 if (_grid.Letters[currentPosition.X, currentPosition.Y - x] != currentChar)
@@ -208,8 +208,8 @@ namespace Day4
             }
             return true;
         }
-  
-        private char GetNextCharacter(char current) 
+
+        private char GetNextCharacter(char current)
         {
             return current switch
             {

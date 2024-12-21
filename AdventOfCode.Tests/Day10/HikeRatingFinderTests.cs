@@ -10,7 +10,7 @@ namespace AdventOfCode.Tests.Day10
         {
             get
             {
-                yield return new TestCaseData(new Point(3,0), new List<string>()
+                yield return new TestCaseData(new Point(3, 0), new List<string>()
                 {
                     "8880",
                     "4321",

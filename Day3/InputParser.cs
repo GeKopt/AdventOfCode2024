@@ -1,6 +1,4 @@
-﻿using Day3;
-
-namespace Day3
+﻿namespace Day3
 {
     public class InputParser
     {
@@ -14,7 +12,7 @@ namespace Day3
 
         public IEnumerable<long> Parse(bool useEnabledState)
         {
-            foreach(var line in _input)
+            foreach (var line in _input)
             {
                 var startIndex = 0;
                 int nextMulIndex;
@@ -43,7 +41,7 @@ namespace Day3
                         yield return source * target;
                     }
                 }
-            }            
+            }
         }
 
         private bool GetIsEnabled(string line, int startIndex, int nextMulIndex)
@@ -63,7 +61,7 @@ namespace Day3
 
         private int GetLowest(int nextMulIndex, int index)
         {
-            if(index == -1)
+            if (index == -1)
             {
                 return nextMulIndex;
             }

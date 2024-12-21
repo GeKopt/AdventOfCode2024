@@ -1,6 +1,4 @@
-﻿using System.Collections.ObjectModel;
-
-namespace Day7
+﻿namespace Day7
 {
     public class Calibration
     {

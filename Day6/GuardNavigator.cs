@@ -5,7 +5,7 @@ namespace Day6
     public class GuardNavigator
     {
         private Map _map;
-        private Guard _guard = new Guard(new Point(0,0), Direction.NORTH);
+        private Guard _guard = new Guard(new Point(0, 0), Direction.NORTH);
 
         public GuardNavigator(Map map)
         {

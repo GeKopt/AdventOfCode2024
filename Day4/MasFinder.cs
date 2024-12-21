@@ -5,7 +5,7 @@ namespace Day4
     public class MasFinder
     {
         private WordGrid _grid;
-        
+
         public MasFinder(WordGrid grid)
         {
             _grid = grid;
@@ -46,7 +46,7 @@ namespace Day4
                 _grid.Letters[currentPosition.X - 1, currentPosition.Y - 1] == 'S' && _grid.Letters[currentPosition.X + 1, currentPosition.Y + 1] == 'M';
         }
 
-        private bool IsWestEast(Point currentPosition) 
+        private bool IsWestEast(Point currentPosition)
         {
             return _grid.Letters[currentPosition.X + 1, currentPosition.Y - 1] == 'M' && _grid.Letters[currentPosition.X - 1, currentPosition.Y + 1] == 'S' ||
                 _grid.Letters[currentPosition.X + 1, currentPosition.Y - 1] == 'S' && _grid.Letters[currentPosition.X - 1, currentPosition.Y + 1] == 'M';
